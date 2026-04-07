@@ -1,0 +1,64 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 80px; /* espacio para navbar */
+  font-family: 'Playfair Display', serif;
+  background: #000;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: #d4af37;
+  margin: 1rem auto 3rem auto;
+}
+
+/* Estilo base de páginas */
+.page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+/* Animación suave al cambiar de ruta */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

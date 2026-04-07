@@ -1,0 +1,291 @@
+/* Hero.css */
+.hero{
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* capas de imagen */
+
+.hero-bg{
+
+  position: absolute;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  opacity:0;
+  transition: opacity 1.8s ease-in-out;
+
+}
+
+/* imagen activa */
+
+.hero-bg.active{
+  opacity:1;
+}
+
+/* contenido */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:1;
+}
+
+.hero-content{
+  position: relative;
+  z-index:2;
+}
+
+.hero h1 {
+  font-family: "Allura", cursive;
+  font-style: normal;
+
+  font-size: 4.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+
+  /* fondo dorado opaco */
+  background: linear-gradient(
+    145deg,
+    rgba(212,175,55,0.35),
+    rgba(212,175,55,0.15)
+  );
+  backdrop-filter: blur(6px);
+
+  /* texto dorado */
+  background-image: linear-gradient(90deg,#d4af37,#f5e6a7,#d4af37);
+  background-size: 200%;
+
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* borde negro en letras */
+  -webkit-text-stroke: 0px rgba(1,2,0,1.8);
+
+  /* borde exterior */
+  border: 4px solid rgba(212,175,55,0.6);
+  box-shadow: 0 0 20px rgba(212,175,55,0.15);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  position: relative;
+
+  animation: shineText 9s linear infinite;
+  transition: all 0.4s ease;
+}
+
+/* brillo animado */
+
+@keyframes shineText{
+  0%{
+    background-position:0%;
+  }
+  100%{
+    background-position:200%;
+  }
+}
+
+/* glow elegante */
+
+.hero h1::after{
+  content:"";
+  position:absolute;
+  inset:-3px;
+  border-radius:30px;
+  border:1px solid rgba(212,175,55,0.35);
+  opacity:0;
+  transition:0.4s;
+}
+
+/* hover */
+
+.hero h1:hover{
+  transform:scale(1.05);
+  letter-spacing:3px;
+  box-shadow:0 0 35px rgba(212,175,55,0.3);
+}
+
+.hero h1:hover::after{
+  opacity:1;
+}
+
+.hero p {
+  font-family: "Yellowtail", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+
+
+  
+}
+
+/* Línea dorada */
+.hero p::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+
+  width: 500px; /* ahora podés cambiar este valor libremente */
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #3a2f0b,
+    #d4af37,
+    #f5e6a3,
+    #d4af37,
+    #3a2f0b
+  );
+
+  background-size: 200% 100%;
+  animation: brilloDorado 3s linear infinite;
+}
+
+/* Animación brillo */
+@keyframes brilloDorado {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: #d4af37;
+  border: none;
+  padding: 12px 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #b9962f;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: #d4af37;
+  color: black;
+}
+
+@keyframes fadeHero {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+  font-family: "Allura", cursive;
+  font-style: normal;
+
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  }
+
+  .hero p {
+  font-family: "Yellowtail", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+
+
+  
+}
+
+/* Línea dorada */
+.hero p::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+
+  width: 400px; /* ahora podés cambiar este valor libremente */
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #3a2f0b,
+    #d4af37,
+    #f5e6a3,
+    #d4af37,
+    #3a2f0b
+  );
+
+  background-size: 200% 100%;
+  animation: brilloDorado 3s linear infinite;
+  }
+
+  .hero-bg{
+    background-size: cover;
+    background-position: center top;
+  }
+
+}

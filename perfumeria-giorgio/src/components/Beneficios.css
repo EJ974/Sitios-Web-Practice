@@ -1,0 +1,234 @@
+.beneficios-premium{
+
+  padding:80px 1px;
+  background:#000;
+  text-align:center;
+  color:white;
+
+}
+
+/* titulo */
+
+.beneficios-titulo{
+
+  font-size:2rem;
+  color:white;
+  text-align:center;
+
+  margin-bottom:60px;
+
+  position:relative;
+  letter-spacing:1px;
+
+}
+
+.beneficios-titulo::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: 19%;
+  height: 3px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: linear-gradient(
+    90deg,
+    #3a2f0b,
+    #d4af37,
+    #f5e6a3,
+    #d4af37,
+    #3a2f0b
+  );
+
+  background-size: 200% 100%;
+  animation: brilloDorado 3s linear infinite;
+}
+
+/* Animación elegante */
+@keyframes brilloDorado{
+
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+
+}
+
+/* contenedor */
+
+.beneficios-container{
+
+  display:flex;
+  justify-content:center;
+  gap:10px;
+
+  overflow-x:auto;
+  scroll-behavior:smooth;
+
+  padding-bottom:10px;
+
+}
+
+/* card */
+
+.beneficio-card{
+
+  min-width:220px;
+
+  padding:30px 20px;
+
+  border-radius:14px;
+
+  background:#111;
+
+  border:1px solid rgba(212,175,55,0.25);
+
+  transition:all .35s ease;
+
+  opacity:0;
+  transform:translateY(20px);
+
+}
+
+/* animacion */
+
+.beneficios-premium.visible .beneficio-card{
+
+  animation:fadeUp .8s forwards;
+
+}
+
+/* hover elegante */
+
+.beneficio-card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:0 0 18px rgba(212,175,55,0.4);
+
+  border:1px solid #d4af37;
+
+}
+
+/* icono */
+
+.beneficio-icono{
+
+  width:60px;
+  height:60px;
+
+  margin:auto;
+  margin-bottom:15px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  font-size:26px;
+
+  background:linear-gradient(135deg,#d4af37,#f6e27a);
+
+  color:#000;
+
+}
+
+/* titulo card */
+
+.beneficio-card h3{
+
+  font-size:18px;
+  font-weight:700;
+
+}
+
+/* descripcion */
+
+.beneficio-desc{
+
+  white-space:pre-line;
+
+  max-height:0;
+  overflow:hidden;
+
+  font-size:14px;
+  color:#ccc;
+
+  margin-top:10px;
+
+  line-height:1.6;
+
+  transition:max-height 0.8s cubic-bezier(.4,0,.2,1);
+
+  text-align:left;
+
+}
+
+/* cuando se abre */
+
+.beneficio-desc.show{
+
+  max-height:700px;
+
+}
+
+/* boton */
+
+.btn-vermas{
+
+  margin-top:10px;
+  background:none;
+  border:none;
+
+  color:#d4af37;
+  font-size:13px;
+
+  cursor:pointer;
+  font-weight:600;
+
+  transition:0.3s;
+
+}
+
+.btn-vermas:hover{
+  color:#fff;
+}
+
+/* card activa */
+
+.beneficio-card.active{
+
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(212,175,55,0.25);
+
+}
+
+/* animacion */
+
+@keyframes fadeUp{
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* scrollbar oculto */
+
+.beneficios-container::-webkit-scrollbar{
+  display:none;
+}
+
+/*Vista CELULAR*/
+@media (max-width: 600px) {
+  .beneficios-titulo::after{
+   width: 70%;
+}
+  
+}

@@ -1,0 +1,106 @@
+.marcas-section{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.titulo-marcas {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+}
+
+/* Línea dorada */
+.titulo-marcas::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+
+  width: 700px; /* ahora podés cambiar este valor libremente */
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #3a2f0b,
+    #d4af37,
+    #f5e6a3,
+    #d4af37,
+    #3a2f0b
+  );
+
+  background-size: 200% 100%;
+  animation: brilloDorado 3s linear infinite;
+}
+
+/* Animación brillo */
+@keyframes brilloDorado {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.marcas-slider{
+  overflow:hidden;
+  width:100%;
+}
+
+.marcas-track{
+  display:flex;
+  gap:60px;
+  width:max-content;
+
+  animation: scrollMarcas 25s linear infinite;
+}
+
+.marca-card{
+  flex:0 0 auto;
+  background-color: azure;
+}
+
+.marca-card img{
+  height:80px;
+  object-fit:contain;
+  filter: grayscale(100%);
+  transition:0.3s;
+}
+
+.marca-card img:hover{
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* animación infinita */
+
+@keyframes scrollMarcas{
+
+  from{
+    transform: translateX(0);
+  }
+
+  to{
+    transform: translateX(-50%);
+  }
+
+}
+
+/* responsive */
+
+@media (max-width:768px){
+
+  .marca-card img{
+    height:40px;
+  }
+
+  .titulo-marcas::after {
+  width: 350px; /* ahora podés cambiar este valor libremente */
+  }
+}

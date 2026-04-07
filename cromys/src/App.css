@@ -1,0 +1,70 @@
+:root {
+  --primary: #2E7D32;
+  --primary-dark: #1b5e20;
+  --secondary: #4FC3F7;
+  --background: #f5f5f5;
+  --text: #333;
+  --white: #ffffff;
+  --shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES DE COLOR */
+:root {
+  --primary: #2E7D32;
+  --primary-dark: #1b5e20;
+  --background: #f5f5f5;
+  --text: #333;
+}
+
+/* BODY */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+/* TITULOS */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CONTENEDOR GENERAL */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* BOTONES */
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+/* ANIMACION SCROLL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

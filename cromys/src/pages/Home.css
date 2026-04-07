@@ -1,0 +1,235 @@
+.home {
+  text-align: center;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+
+/* IMAGENES HERO */
+.hero-images {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: heroFade 15s infinite;
+}
+
+/* Delay imágenes */
+.hero-img:nth-child(1) { animation-delay: 0s; }
+.hero-img:nth-child(2) { animation-delay: 5s; }
+.hero-img:nth-child(3) { animation-delay: 10s; }
+
+/* FADE HERO */
+@keyframes heroFade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* OVERLAY */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CAJA TEXTO HERO */
+.hero-box {
+  background: rgba(0,0,0,0.55);
+  padding: 30px 40px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+.hero-title {
+  font-size: 58px;
+  text-shadow: 12px 2px 10px rgba(255, 255, 255, 0.9);
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(179, 14, 47, 0.911);
+}
+
+.hero-subtitle {
+  font-size: 38px;
+  margin-bottom: 15px;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 12px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-btn {
+  background: #2E7D32;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero-btn:hover {
+  background: #1b5e20;
+}
+
+/* INFO CARDS */
+.home-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px;
+}
+
+.info-card {
+  background: #f5f5f5;
+  padding: 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* CATEGORIAS */
+.categories {
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.categories-slider {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  touch-action: pan-y;
+}
+
+.categories-track {
+  display: flex;
+  gap: 20px;
+  overflow: hidden; /* 👈 bloquea scroll manual */
+  padding: 10px 0px;
+}
+
+.categories-slider {
+  overflow: hidden;
+  width: 100%;
+  touch-action: pan-y;
+}
+
+.categories-track.dragging {
+  cursor: grabbing;
+}
+
+.category-card {
+  min-width: 180px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  user-select: none;
+  transition: 0.3s;
+  scroll-snap-align: start;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.category-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.category-card p {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  color: #2E7D32;
+}
+
+
+
+/* FLECHAS */
+/* Flechas */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+/* ANIMACIONES GENERALES */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .home-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .hero-subtitle {
+  font-size: 28px;
+  }
+
+
+  .hero-box {
+    padding: 20px;
+  }
+
+  .category-card {
+    min-width: 180px;
+  }
+}

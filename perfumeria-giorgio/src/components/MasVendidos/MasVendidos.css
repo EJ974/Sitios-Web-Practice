@@ -1,0 +1,199 @@
+.mas-vendidos-section {
+  padding: 4rem 2rem;
+  background: #0f0f0f;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔥 centra todo el bloque */
+}
+
+/* TÍTULO */
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+/* Línea dorada animada */
+
+.titulo-seccion::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #3a2f0b,
+    #d4af37,
+    #f5e6a3,
+    #d4af37,
+    #3a2f0b
+  );
+  background-size: 200% 100%;
+  border-radius: 10px;
+  animation: brilloDorado 3s linear infinite;
+}
+
+@keyframes brilloDorado {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* WRAPPER */
+
+.carrusel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 🔥 centra horizontal */
+  width: 100%;
+  max-width: 1200px; /* 🔥 limita ancho elegante */
+}
+
+/* CARRUSEL */
+
+.carrusel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: auto;
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 1200px;
+  cursor: grab;
+}
+
+.carrusel:active {
+  cursor: grabbing;
+}
+
+.carrusel::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+
+.producto-card {
+  min-width: 240px;
+  background: #1a1a1a;
+  padding: 1rem;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  flex: 0 0 auto;
+}
+
+.producto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+  border-color: #d4af37;
+}
+
+.producto-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.producto-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.producto-card span {
+  color: #d4af37;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+/* FLECHAS */
+
+.arrow {
+  background: transparent;
+  border: none;
+  color: #d4af37;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 1rem;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
+}
+
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  gap: 10px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner-container p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.carrusel {
+  cursor: grab;
+}
+
+.carrusel:active {
+  cursor: grabbing;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .producto-card {
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .producto-card {
+    min-width: 20px;
+  }
+
+  .producto-card img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .arrow {
+    display: none;
+  }
+
+  .producto-card {
+    min-width: 75%;
+  }
+}

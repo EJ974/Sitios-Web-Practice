@@ -1,0 +1,618 @@
+ 
+ /*---------------------Estilos para el Header----------------*/
+  nav.navbar {
+    background-image: url('/TheGeekParadise//cabecera_img/2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 5px solid black; /* borde negro de 5px */
+  }
+
+
+.navbar-nav .nav-link,
+.navbar-nav .dropdown-item {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 23px;
+  color: #000 !important; /* Negro */
+}
+
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    font-size: 42px; /* Tamaño en tablet y escritorio */
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-nav {
+    font-size: 26px; /* Tamaño en pantallas grandes */
+  }
+}
+
+/*-----------------------------Dropdown del Header----------------------*/
+/* Posiciona el submenú a la derecha */
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  transition: all 0.8s ease;
+  background-color: #749edf !important;
+}
+
+/* Muestra el submenú al hacer hover sobre el padre */
+.dropdown-submenu:hover > .dropdown-menu,
+.dropdown-submenu.show-submenu > .dropdown-menu {
+  display: block;
+}
+
+
+.dropdown-submenu .dropdown-item {
+  color: white !important;
+  text-shadow: 
+    -3px -1px 0 black,
+     3px -1px 0 black,
+    -3px  1px 0 black,
+     3px  1px 0 black;
+}
+
+.dropdown-submenu .dropdown-item:hover {
+  background-color: #749edf !important;/* o el color que prefieras */
+  border-radius: 12px;
+  border: 2px solid black;
+}
+
+.dropdown-menu.dropdown-animated.show {
+  background-color: #749edf !important; /* Cambia #123456 por el color que quieras */
+  border: 4px solid black;
+}
+
+/* Quitar sombra y cambio de fondo al hover */
+.dropdown-menu .dropdown-item:hover, 
+.dropdown-menu .dropdown-item:focus {
+  background-color: transparent !important;  /* Sin fondo al pasar el mouse */
+  box-shadow: none !important;    
+  border-radius: 12px;            /* Sin sombra */
+  border: 2px solid black;                     /* Borde negro al hover */
+}
+
+.dropdown-menu .dropdown-item {
+  color: white !important;
+  text-shadow: 
+    -3px -1px 0 black,
+     3px -1px 0 black,
+    -3px  1px 0 black,
+     3px  1px 0 black;
+}
+
+.dropdown-menu {
+  border: 4px solid black;
+}
+
+
+
+
+/*----------------------------------------------------------------------*/
+
+  
+  /*---------------------Estilos para el Footer----------------*/
+  footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 3rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 18px;
+    border: 5px solid black; /* borde negro de 5px */
+  }
+
+  footer {
+  background-image: url('/TheGeekParadise//cabecera_img/2.jpg'); /* Ruta a tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 20px;
+}
+
+  /*----------------------------------------------------------*/
+
+
+  /*---------------------Estilos para el Body----------------*/
+  body {
+    margin-bottom: 80px; /* deja espacio para que no tape el contenido */
+    /* Imagen de fondo */
+    background-image: url('../body_img/2.jpg');
+    background-repeat: no-repeat;      /* No repetir la imagen */
+    background-size: cover;             /* Que la imagen cubra todo el fondo */
+    background-position: center center; /* Centrar la imagen */
+    background-attachment: fixed;       /* Que la imagen quede fija al hacer scroll (opcional) */
+  }
+  /*----------------------------------------------------------*/
+
+
+  /*---------------------Estilos para el logo del Navbar----------------*/
+.logo-responsive {
+    height: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .logo-responsive {
+      height: 70px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .logo-responsive {
+      height: 70px;
+    }
+  }
+ /*----------------------------------------------------------------------------------*/
+
+
+
+ /*---------------------Estilos para el Contenido Principal -------------------------*/
+    @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(1.95);
+    }
+    100% {
+      opacity: 2;
+      transform: scale(1);
+    }
+  }
+
+  .img-main {
+    max-width: 900px; /* Para escritorio */
+    height: auto;
+    padding: 10px;
+    border: 10px solid black; /* borde negro de 5px */
+    border-radius: 20px; /* opcional, bordes redondeados */
+    margin-top: 120px;
+    animation: fadeInScale 1s ease-out forwards !important;
+  }
+
+  @media (max-width: 768px) {
+    .img-main {
+      max-width: 100%; /* Se adapta al ancho de celular */
+    }
+  }
+
+  @media (min-width: 768px) {
+  .img-main {
+    margin-top: 120px;
+  }
+}
+
+
+  /*----------------------------------------------------------------------------------*/
+
+
+
+/*---------------------Estilos para el Carrusel -------------------------*/
+/* Tamaño base para las imágenes del carrusel */
+.carousel-item img {
+  width: 100%;
+  height: auto;          /* Que la altura se ajuste proporcionalmente */
+  max-height: 450px;     /* Altura máxima para pantallas grandes */
+  object-fit: contain;   /* Ajusta la imagen sin recortarla */
+}
+
+/* Para móviles */
+@media (max-width: 768px) {
+  .carousel-item img {
+    max-height: 550px;   /* Menor altura en móviles */
+    margin-top: 10px;
+  }
+}
+
+/* Para pantallas muy grandes */
+@media (min-width: 1200px) {
+  .carousel-item img {
+    max-height: 600px;
+    margin-top: 10px;
+  }
+}
+
+
+/*----------------------------------------------------------------------*/
+
+/*---------------------Estilos para el Texto de los productos-------------------------*/
+
+
+/* --------- ESTILO BASE (celulares) --------- */
+
+.card-body .card-title {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 26px;
+  color: black;
+  text-align: center;
+  
+}
+
+.card .card-body .card-text {
+  font-family: 'Londrina Solid', sans-serif;
+  font-size: 22px;
+  color: #f1f1f1;
+}
+
+.card .card-footer {
+  font-family: 'Lilita One', cursive;
+  font-size: 24px;
+  color: black !important;
+}
+
+.card-img-top {
+  border: 8px solid black;
+}
+
+.card-footer {
+  border: 8px solid black;
+}
+
+.card-body {
+  background-image: url('../secciones/catalogo/mascaras/img/fondo_producto.jpg');
+  background-size: cover;        /* Ajusta la imagen para cubrir todo el fondo sin deformarse */
+  background-position: center;   /* Centra la imagen */
+  background-repeat: no-repeat;  /* Evita que se repita la imagen si no alcanza */
+  border: 8px solid black; /* borde negro de 5px */
+}
+
+.card-title {
+  background-image: url('../secciones/catalogo/mascaras/img/fondo_producto_footer.jpg');
+  background-size: cover;        /* Ajusta la imagen para cubrir todo el fondo sin deformarse */
+  background-position: center;   /* Centra la imagen */
+  background-repeat: no-repeat;  /* Evita que se repita la imagen si no alcanza */
+}
+
+.card-footer {
+  background-image: url('../secciones/catalogo/mascaras/img/fondo_producto_footer.jpg');
+  background-size: cover;        /* Ajusta la imagen para cubrir todo el fondo sin deformarse */
+  background-position: center;   /* Centra la imagen */
+  background-repeat: no-repeat;  /* Evita que se repita la imagen si no alcanza */
+}
+
+/* --------- TABLETS (≥768px) --------- */
+@media (min-width: 768px) {
+  .card-body .card-title {
+    font-size: 46px;
+  }
+
+  .card .card-body .card-text {
+    font-size: 34px;
+  }
+
+  .card .card-footer {
+    font-size: 26px;
+  }
+}
+
+/* --------- ESCRITORIO (≥1200px) --------- */
+@media (min-width: 1200px) {
+  .card-body .card-title {
+    font-size: 25px;
+  }
+
+  .card .card-body .card-text {
+    font-size: 20px;
+  }
+
+  .card .card-footer {
+    font-size: 22px;
+  }
+}
+
+
+/*------------------------------------------------------------------------------------*/
+
+/*------------------------------------BOTONES PARA SECCION VESTIMENTA / Principal ------------------*/
+/* Botones VESTIMENTA (Escritorio) */
+.img-main-button-vestimenta {
+  width: 900px;
+  height: auto;
+  border: 4px solid black;
+  border-radius: 15px;
+}
+
+.botonera-vestimenta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 100px;
+}
+
+/* Hover / Activo */
+.img-button-vestimenta:hover,
+.img-button-vestimenta:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Adaptación a celular */
+@media (max-width: 768px) {
+  .img-main-button-vestimenta {
+    width: 90%;
+    max-width: 350px;
+    margin-bottom: 15px;
+  }
+
+  .botonera-vestimenta {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+  }
+}
+/*-----------------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------BOTONES PARA SECCION VESTIMENTA / Remera ------------------*/
+/* Tamaño por defecto (escritorio) */
+.img-main-button {
+  width: 900px;
+  height: auto;
+  border: 4px solid black;
+  border-radius: 15px;
+}
+
+/* Contenedor por defecto (escritorio) */
+.botonera-responsive {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 150px !important;
+}
+
+/* Efecto al presionar o hacer hover */
+.img-button:hover,
+.img-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Adaptación a celular */
+@media (max-width: 768px) {
+  .img-main-button {
+    width: 90%;
+    max-width: 350px;
+    margin-bottom: 15px;
+  }
+
+  .botonera-responsive {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 140px !important; /* 👈 Ajustá este valor según el alto de tu menú */
+  }
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------Texto Explicativo PARA SECCION VESTIMENTA------------------*/
+.explicacion-container {
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 10px solid black;
+  border-radius: 15px;
+  text-align: center;
+  animation: aparecerTexto 2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  font-family: 'Lilita One', cursive;
+  font-size: 40px;
+  color: #111;
+}
+
+@keyframes aparecerTexto {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive para celular */
+@media (max-width: 768px) {
+  .explicacion-container {
+    font-size: 22px;
+    margin: 20px;
+    padding: 15px;
+  }
+}
+/*---------------------------------------------------------------------------------------------*/
+
+/*--------------------------------Imagenes de Body de las diferentes Secciones--------------------*/
+body.section-alimentos {
+  background-image: url('/TheGeekParadise/secciones/catalogo/alimentos/img/fondo_alimentos.png') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.section-body {
+  background-image: url('/TheGeekParadise/secciones/catalogo/bodys/img/fondo_body.png') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.section-vestimenta {
+  background-image: url('/TheGeekParadise/secciones/catalogo/vestimenta/cosplay/img/fondo_vestimenta.png') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.section-remeras {
+  background-image: url('/TheGeekParadise/secciones/catalogo/vestimenta/remeras/img/fondo_vestimenta.png') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.section-cosplay {
+  background-image: url('/TheGeekParadise/secciones/catalogo/vestimenta/cosplay/img/fondo_vestimenta.png') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.section-mascaras {
+  background-image: url('/TheGeekParadise/secciones/catalogo/mascaras/img/fondo_mascaras.png') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*------------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------Sobre Nosotros--------------------*/
+/* Imagen decorativa centrada que "flota" suavemente */
+.imagen-flotante-container {
+  margin-top: 150px !important;
+  margin-bottom: 30px;
+}
+
+.logo-flotante {
+  width: 290px;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+/* Animación flotante */
+@keyframes flotar {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Sección principal */
+
+
+.titulo-sobre-nosotros {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2.2rem;
+  color: #ff3366;
+}
+
+.sobre-nosotros p {
+  font-size: 1.1rem;
+  color: #000000;
+  line-height: 1.6;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+.honk-titulo {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+  font-size: 3rem;
+  color: #ff3399;
+}
+
+.sedgwick-descripcion {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  color: #000000;
+  line-height: 1.7;
+}
+
+.fondo-texto {
+  background-image: url('/TheGeekParadise/secciones/sobre nosotros/img/fondo_sobre_nosotros.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white; /* Para que el texto se lea bien */
+  /* Opcional: agrego un overlay semitransparente para mejorar legibilidad */
+  position: relative;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.fondo-texto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  z-index: 0;
+}
+
+.fondo-texto > * {
+  position: relative;
+  z-index: 1; /* Para que el contenido esté sobre el overlay */
+}
+
+
+/*-----------------------------------------------------------------------------*/
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.titulo-contacto {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+  font-size: 3rem;
+  color: #ff3399;
+}
+
+.titulo-contacto-descripcion{
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  color: #ffffff; /* blanco */
+  line-height: 1.7;
+  text-shadow:
+     -2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    2px 2px 0 #000,
+    0px -2px 0 #000,
+    0px 2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000;
+}
+
+.contacto-fondo {
+  background-image: url('/TheGeekParadise/secciones/contacto/img/fondo_contacto.png'); /* Cambiá la ruta según dónde esté tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.contacto-fondo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Capa oscura para contraste */
+  z-index: 0;
+}
+
+.contacto-fondo > .container {
+  position: relative;
+  z-index: 1;
+}
